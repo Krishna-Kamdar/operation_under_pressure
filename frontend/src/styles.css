@@ -21,3 +21,44 @@ a { color: inherit; text-decoration: none; }
 .back-link { background: transparent; color: #3156a5; margin: 1.5rem 0; padding: 0; }.detail-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1.4fr) minmax(300px, .8fr); }.detail-card, .comment-card, .activity-card { padding: 1.5rem; }.detail-heading { align-items: start; display: flex; justify-content: space-between; gap: 1rem; }.detail-heading h1 { font-size: clamp(2rem, 4vw, 3rem); }.description { line-height: 1.7; white-space: pre-wrap; }.metadata { border-bottom: 1px solid #e0e5ed; border-top: 1px solid #e0e5ed; display: flex; gap: 3rem; margin: 2rem 0; padding: 1rem 0; }.metadata div { display: grid; gap: .3rem; }.metadata span { color: #69758a; font-size: .75rem; }.metadata strong { text-transform: capitalize; }.actions { display: flex; flex-wrap: wrap; gap: .75rem; }.comment-card { margin-top: 1rem; }.comment-card textarea { display: block; margin-bottom: .75rem; min-height: 100px; resize: vertical; width: 100%; }.activity-card h2, .comment-card h2 { font-size: 1rem; margin-top: 0; }.activity-event { display: flex; gap: .8rem; padding: 1rem 0; }.timeline-dot { background: #e56a47; border: 3px solid #f9ded6; border-radius: 50%; flex: 0 0 12px; height: 12px; margin-top: .25rem; }.activity-event strong { text-transform: capitalize; }.activity-event p { margin: .25rem 0; }.activity-event small { color: #69758a; overflow-wrap: anywhere; }
 @media (max-width: 760px) { .hero, .detail-heading { align-items: start; flex-direction: column; }.hero-stat { border-left: 0; border-top: 1px solid #ccd5e2; padding: 1rem 0 0; width: 100%; }.detail-grid { grid-template-columns: 1fr; }.metadata { gap: 1rem; justify-content: space-between; }.item-row { align-items: start; flex-wrap: wrap; }.item-main { min-width: 65%; } }
 @media (max-width: 760px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* Visual polish */
+:root { background: #f3f6fb; }
+body { background: radial-gradient(circle at 8% 0%, #e8efff 0, transparent 32rem), #f3f6fb; }
+.app-shell { max-width: 1220px; padding-bottom: 4rem; }
+.topbar { background: #f3f6fbdd; backdrop-filter: blur(14px); position: sticky; top: 0; z-index: 5; }
+button { border-radius: 10px; transition: background .18s, box-shadow .18s, transform .18s; }
+button:hover:not(:disabled) { box-shadow: 0 4px 10px #25385818; transform: translateY(-1px); }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #8fb0ff; outline-offset: 2px; }
+.button-quiet:hover, .button-secondary:hover { background: #dce6f7; color: #173b87; }
+.hero { padding-top: 4.5rem; }
+.hero-stat strong { color: #173b87; letter-spacing: -.05em; }
+.filters { border-color: #d8e2f0; box-shadow: 0 8px 24px #2538580b; }
+.filters input { background: #f8faff; border: 1px solid transparent; border-radius: 9px; padding: .55rem .7rem; }
+.filters input:focus { background: #fff; border-color: #9bb5f4; }
+.panel { border-color: #e0e7f1; border-radius: 16px; box-shadow: 0 12px 34px #2538580d; }
+.item-row { padding: 1.15rem 1.25rem; transition: border-color .18s, transform .18s, box-shadow .18s; }
+.item-row:hover { box-shadow: 0 10px 22px #25385818; transform: translateY(-1px); }
+.priority-dot { box-shadow: 0 0 0 5px #f2f5fa; }
+.badge { padding: .4rem .7rem; white-space: nowrap; }
+.auth-card { box-shadow: 0 24px 70px #203a6b1c; }
+.create-form input, .create-form select, .create-form textarea, .edit-form input, .edit-form select, .edit-form textarea { background: #fbfcff; border-radius: 9px; }
+.activity-card { align-self: start; position: sticky; top: 5.5rem; }
+.activity-event { border-bottom: 1px solid #eef1f6; }
+.activity-event:last-child { border-bottom: 0; }
+.tabs { scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.back-link:hover { background: transparent; box-shadow: none; transform: none; }
+@media (max-width: 760px) {
+  .hero { padding-top: 3rem; }
+  .activity-card { position: static; }
+}
+@media (max-width: 520px) {
+  .app-shell { padding-left: 1rem; padding-right: 1rem; }
+  .topbar { align-items: flex-start; gap: .75rem; }
+  .user-menu { align-items: flex-end; flex-direction: column; gap: .4rem; }
+  .filters { align-items: stretch; flex-direction: column; }
+  .filters button { width: 100%; }
+  .hero h1 { font-size: 2.5rem; }
+  .detail-card, .comment-card, .activity-card { padding: 1.1rem; }
+}
